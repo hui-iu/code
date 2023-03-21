@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Movie</title>
+<!-- Style -->
+<link href="static/assets/css/bootstrap.css" rel="stylesheet">
+<link href="static/assets/css/style.css" rel="stylesheet">
+<!-- Responsive -->
+<link href="static/assets/css/responsive.css" rel="stylesheet">
+<!-- Choose Layout -->
+<link href="static/assets/css/layout-semiboxed.css" rel="stylesheet">
+<!-- Choose Skin -->
+<link href="static/assets/css/skin-red.css" rel="stylesheet">
+<!-- Favicon -->
+<link rel="static/assets/shortcut icon" href="static/assets/img/favicon.ico">
+<!-- IE -->
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="static/assets/js/html5shiv.js"></script>
+      <script src="static/assets/js/respond.min.js"></script>
+    <![endif]-->
+<!--[if lte IE 8]>
+	<link href="static/assets/css/ie8.css" rel="stylesheet">
+	 <![endif]-->
+</head>
+<body class="off">
+<!-- /.wrapbox start-->
+<div class="wrapbox">
+	<!-- TOP AREA
+================================================== -->
+	<section class="toparea">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 top-text pull-left animated fadeInLeft">
+				<i class="icon-phone"></i> Phone: 111 222 333 <span class="separator"></span>
+				<i class="icon-envelope"></i> Email: <a href="#">z0p0h@qq.com</a>
+			</div>
+			<div class="col-md-6 text-right animated fadeInRight">
+				<div class="social-icons">
+					<a class="icon icon-facebook" href="#"></a>
+					<a class="icon icon-twitter" href="#"></a>
+					<a class="icon icon-linkedin" href="#"></a>
+					<a class="icon icon-skype" href="#"></a>
+					<a class="icon icon-google-plus" href="#"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!-- /.toparea end-->
+	<!-- NAV
+================================================== -->
+	<nav class="navbar navbar-fixed-top wowmenu" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand logo-nav" href="index.html" style="font-size:30px;">豆瓣电影</a>
+		</div>
+		<ul id="nav" class="nav navbar-nav pull-right">
+			<li><a href="/index">首页</a></li>
+			<li class="active"><a href="/movie">电影</a></li>
+			<li><a href="/score">评分</a></li>
+			<li><a href="/comment">影评</a></li>
+			<li><a href="/team">团队</a></li>
+		</ul>
+	</div>
+	</nav>
+	<!-- /nav end-->
+	<!-- PAGE TITLE
+================================================== -->
+	<section class="pageheader-default text-center">
+	<div class="semitransparentbg">
+		<h1 class="animated fadeInDown">Movie Top250</h1>
+		<p class="animated fadeInUp container page-description">
+			 豆瓣用户每天都在对“看过”的电影进行“很差”到“力荐”的评价 豆瓣根据每部影片看过的人数以及该影片所得的评价等综合数据<br>
+			 通过算法分析产生豆瓣电影 Top 250
+		</p>
+	</div>
+	</section>
+	<div class="wrapsemibox">
+		<div class="semiboxshadow text-center">
+			<img src="static/assets/img/shp.png" class="img-responsive" alt="">
+		</div>
+		<!-- PORTFOLIO
+================================================== -->
+	<section class="container">
+		<!-- MASONRY ITEMS START
+	================================================== -->		
+			
+			<!-- Filtering Menu
+	================================================== -->
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div id="filter">
+						<ul>
+							<li><a href="" data-filter="*" class="selected"><i class="icon icon-reorder"></i> MOIVE</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- END filtering menu -->
+			<div id="content">
+				<table class="table table-srtiped">
+					<tr>
+						<td>排名</td>
+						<td>电影中文名</td>
+						<td>电影英文名</td>
+						<td>评分</td>
+						<td>评价数</td>
+						<td>概述</td>
+						<td>其他信息</td>
+					</tr>
+					{% for movie in movies %}
+					<tr>
+						<td>{{ movie[0] }}</td>
+						<!-- target="_blank"打开一个空网页 -->
+						<td><a href="{{ movie[1] }}" target="_blank">{{ movie[3] }}</a></td>
+						<td>{{ movie[4] }}</td>
+						<td>{{ movie[5] }}</td>
+						<td>{{ movie[6] }}</td>
+						<td>{{ movie[7] }}</td>
+						<td>{{ movie[8] }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+			{% for data in dataList2 %}
+				<tr>
+					<th scope="col">{{ data[1] }}</th>
+					<td scope="col">{{ data[3] }}</td>
+					<td scope="col">{{ data[5] }}</td>
+				</tr>
+			{% endfor %}
+	</section>
+
+		<!--CALL TO ACTION PANEL
+================================================== -->
+		<section class="container animated fadeInDownNow notransition topspace40">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="text-center">
+					<p class="bigtext">
+						 Praesent <span class="fontpacifico colortext">WowThemes</span> sapien, a vulputate enim auctor vitae
+					</p>
+					<p>
+						 Duis non lorem porta, adipiscing eros sit amet, tempor sem. Donec nunc arcu, semper a tempus et, consequat
+					</p>
+				</div>
+				<div class="text-center topspace20">
+					<a href="#" class="buttonblack"><i class="icon-shopping-cart"></i>&nbsp; get theme</a>
+					<a href="#" class="buttoncolor"><i class="icon-link"></i>&nbsp; learn more</a>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- /. end call to action-->
+	</div>
+	<!-- /.wrapsemibox end-->
+	<!-- BEGIN FOOTER
+================================================== -->
+	<section>
+	<div class="footer">
+		<div class="container animated fadeInUpNow notransition">
+			<div class="row">
+				<div class="col-md-3">
+					<h1 class="footerbrand">Calypso</h1>
+					<p>
+						 Introducing a premium HTML5 & CSS3 template for multipurpose use.
+					</p>
+					<p>
+						 Three awesome layouts, beautiful modern design, lots of features and skins.
+					</p>
+					<p>
+						 Made with &nbsp;<i class="icon-heart"></i>&nbsp; by WowThemes.net.
+					</p>
+				</div>
+				<div class="col-md-3">
+					<h1 class="title"><span class="colortext">F</span>ind <span class="font100">Us</span></h1>
+					<div class="footermap">
+						<p>
+							<strong>Address: </strong> No.42 - 54816 Inc Calypso
+						</p>
+						<p>
+							<strong>Phone: </strong> + 1 (280) 482 9537
+						</p>
+						<p>
+							<strong>Fax: </strong> + 1 (372) 742 9532
+						</p>
+						<p>
+							<strong>Email: </strong> wowthemesnet@gmail.com
+						</p>
+						<ul class="social-icons list-soc">
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-google-plus"></i></a></li>
+							<li><a href="#"><i class="icon-skype"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<h1 class="title"><span class="colortext">C</span>lients' <span class="font100">Voice</span></h1>
+					<div id="quotes">
+						<div class="textItem">
+							<div class="avatar">
+								<img src="http://wowthemes.net/demo/biscaya/img/demo/avatar.jpg" alt="avatar">
+							</div>
+							 "Before turning to those moral and mental aspects of the matter which present the greatest difficulties, let the inquirer begin by mastering more elementary problems.<span style="font-family:arial;">"</span><br/><b> Jesse T, Los Angeles </b>
+						</div>
+						<div class="textItem">
+							<div class="avatar">
+								<img src="http://wowthemes.net/demo/biscaya/img/demo/avatar.jpg" alt="avatar">
+							</div>
+							 "How often have I said to you that when you have eliminated the impossible, whatever remains, however improbable, must be the truth?<span style="font-family:arial;">"</span><br/><b>Ralph G. Flowers </b>
+						</div>
+					</div>
+					<div class="clearfix">
+					</div>
+				</div>
+				<div class="col-md-3">
+					<h1 class="title"><span class="colortext">Q</span>uick <span class="font100">Message</span></h1>
+					<div class="done">
+						<div class="alert alert-success">
+							<button type="button" class="close" data-dismiss="alert">×</button>
+							Your message has been sent. Thank you!
+						</div>
+					</div>
+					<form method="post" action="contact.php" id="contactform">
+						<div class="form">
+							<input class="col-md-6" type="text" name="name" placeholder="Name">
+							<input class="col-md-6" type="text" name="email" placeholder="E-mail">
+							<textarea class="col-md-12" name="comment" rows="4" placeholder="Message"></textarea>
+							<input type="submit" id="submit" class="btn" value="Send">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p id="back-top">
+		<a href="#top"><span></span></a>
+	</p>
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<p class="pull-left">
+						 &copy; <a target="_blank" href="http://www.mobanwang.com" title="网页模板">网页模板</a>
+					</p>
+				</div>
+				<div class="col-md-8">
+					<ul class="footermenu pull-right">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Work</a></li>
+						<li><a href="#">Pages</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!-- /footer section end-->
+</div>
+<!-- /.wrapbox ends-->
+<!-- SCRIPTS, placed at the end of the document so the pages load faster
+================================================== -->
+<script src="static/assets/js/jquery.js"></script>
+<script src="static/assets/js/bootstrap.js"></script>
+<script src="static/assets/js/plugins.js"></script>
+<script src="static/assets/js/common.js"></script>
+<script>
+$(window).load(function(){
+var $container = $('#content')
+// initialize Isotope
+$container.isotope({
+  // options...
+  resizable: false, // disable normal resizing
+  // set columnWidth to a percentage of container width
+  masonry: { columnWidth: $container.width() / 2 }
+});
+// update columnWidth on window resize
+$(window).smartresize(function(){
+  $container.isotope({
+    // update columnWidth to a percentage of container width
+    masonry: { columnWidth: $container.width() / 2 }
+  });
+});
+});
+</script>
+<script>
+//MASONRY
+$(document).ready(function(){
+var $container = $('#content');
+  $container.imagesLoaded( function(){
+	$container.isotope({
+	filter: '*',	
+	animationOptions: {
+	 duration: 750,
+	 easing: 'linear',
+	 queue: false,	 
+   }
+});
+});
+//FILTER
+$('#filter a').click(function(){
+  var selector = $(this).attr('data-filter');
+	$container.isotope({ 
+	filter: selector,
+	animationOptions: {
+	 duration: 750,
+	 easing: 'linear',
+	 queue: false,
+   }
+  });
+  return false;
+});
+$('#filter a').click(function (event) {
+	$('a.selected').removeClass('selected');
+	var $this = $(this);
+	$this.addClass('selected');
+	var selector = $this.attr('data-filter');
+	$container.isotope({
+		 filter: selector
+	});
+	return false;
+});
+});
+//ROLL ON HOVER
+$(function() {
+$(".roll").css("opacity","0");
+$(".roll").hover(function () {
+$(this).stop().animate({
+opacity: .8
+}, "slow");
+},
+function () {
+$(this).stop().animate({
+opacity: 0
+}, "slow");
+});
+});
+//CALL PRETTY PHOTO
+	$(document).ready(function(){
+		$("a[data-gal^='prettyPhoto']").prettyPhoto({social_tools:'', animation_speed: 'normal' , theme: 'dark_rounded'});
+	});
+</script>
+</body>
+</html>
